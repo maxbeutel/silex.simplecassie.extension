@@ -20,11 +20,11 @@ class CassandraExtension implements ExtensionInterface
     
     public function register(Application $app) 
     {
-        if (!isset($app['simplecassie.path'])) {
+        if (!isset($app['simplecassie.class_path'])) {
             throw new InvalidArgumentException('Path to Simplecassie include file must be set');
         }
         
-        require_once $app['simplecassie.path'];
+        require_once $app['simplecassie.class_path'];
         
         $cassie = new SimpleCassie(
             isset($app['simplecassie.host'])    ? $app['simplecassie.host']    : self::DEFAULT_HOST, 

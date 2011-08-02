@@ -16,7 +16,7 @@ Edit your index.php:
 ```php
 $app['autoloader']->registerNamespace('Simplecassie', APPLICATION_PATH . '/vendor/Silex-extensions/simplecassie-cassandra-extension/lib');
 $app->register(new Simplecassie\Extension\CassandraExtension(), array(
-    'simplecassie.path'             => APPLICATION_PATH . '/vendor/SimpleCassie.php',   // set path to Simplecassie library classes here
+    'simplecassie.class_path'       => APPLICATION_PATH . '/vendor/SimpleCassie.php',   // set path to Simplecassie library classes here
     'simplecassie.host'             => 'localhost',                                     // cassandra host
     'simplecassie.port'             => 9160,                                            // cassandra port
     'simplecassie.timeout'          => 100,                                             // connection timeout
